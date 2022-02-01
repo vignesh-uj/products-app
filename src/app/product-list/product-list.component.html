@@ -1,0 +1,36 @@
+<h2>Products</h2>
+
+<div *ngFor="let prod of products">
+  <h3>
+    <a [title]="prod.name + ' details'">
+      {{ prod.name }}
+    </a>
+  </h3>
+
+  <div *ngIf="prod.description">
+    Detail: {{ prod.description }}
+  </div>
+
+  <button (click)="share()">
+  Share
+  </button>
+
+  <app-product-alerts [product]="prod" (notify)="onNotifyClick($event)"></app-product-alerts>
+
+
+  <br>
+
+  <div>
+ 
+    <a
+    [title]="prod.name + ' details'"
+    [routerLink]="['/products/details', prod.id]">
+      View Details of {{ prod.name }}
+    </a>
+
+  </div>
+    
+
+</div>
+
+<br>

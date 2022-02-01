@@ -1,0 +1,5 @@
+<br>
+<p *ngIf="product && product.price > 700">
+    <button style="margin-right: 12px;" (click)="onNotifyTodayClick()">Notify today</button>
+    <button (click)="onNotifyNextTimeClick()">Notify next time</button>
+</p>
