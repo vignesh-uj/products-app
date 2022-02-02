@@ -22,9 +22,7 @@
 
   <div>
  
-    <a
-    [title]="prod.name + ' details'"
-    [routerLink]="['/products/details', prod.id]">
+    <a [title]="prod.name + ' details'" [routerLink]="['/products/details', prod.id, prod.name]">
       View Details of {{ prod.name }}
     </a>
 
