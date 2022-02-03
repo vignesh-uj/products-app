@@ -1,5 +1,9 @@
+<h2>Product Details</h2>
 
+<div *ngIf="currentProduct">
+    <h3>{{ currentProduct.name }}</h3>
+    <h4>{{ currentProduct.price | currency }}</h4>
+    <p>{{ currentProduct.description }}</p>
 
-<h3>Product details works!!!</h3>
-
-<h2>You are reading the product details of the product ID {{ currentProductId }} whose name is {{ currentProductName }} </h2>
+    <button (click)="addToCart()">Buy</button>
+</div>
