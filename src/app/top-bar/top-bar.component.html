@@ -2,5 +2,18 @@
   <h1>My Store</h1>
 </a>
 
+<button (click)="onViewData()">View common data</button>
+
+{{ items.join(', ') }}
+
+<a routerLink="/customer-dashboard" class="button fancy-button" style="padding: 0;"><i class="material-icons">component</i>Customer dashboard DEMO</a>
+
+<a routerLink="/component-demo" class="button fancy-button" style="padding: 0;"><i class="material-icons">component</i>Component DEMO</a>
+
+<a routerLink="/mission-control" class="button fancy-button" style="padding: 0;"><i class="material-icons">component</i>Mission control</a>
+
+<a routerLink="/register" class="button fancy-button" style="padding: 0;"><i class="material-icons">component</i>Register</a>
+
 <a routerLink="/cart" class="button fancy-button"><i class="material-icons">shopping_cart</i>Checkout</a>
+
 

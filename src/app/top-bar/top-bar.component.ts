@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CommonService } from '../services/common.service';
 
 @Component({
   selector: 'app-top-bar',
@@ -6,6 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./top-bar.component.css']
 })
 export class TopBarComponent {
+
+  items: string[] = [];
+
+  constructor (private commonService: CommonService) {
+
+  }
+
+
+  onViewData () {
+    this.items = this.commonService.readNames();
+  }
 
 }
 

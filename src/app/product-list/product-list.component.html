@@ -1,36 +1,46 @@
 <h2>Products</h2>
 
+<app-bread-crumb></app-bread-crumb>
+
+<span>{{ title }}</span>
+
 <div *ngFor="let prod of products">
-  <h3>
-    <a [title]="prod.name + ' details'">
-      {{ prod.name }}
-    </a>
-  </h3>
+      <h3>
+        <a [title]="prod.name + ' details'">
+          {{ prod.name }}
+        </a>
+      </h3>
 
-  <div *ngIf="prod.description">
-    Detail: {{ prod.description }}
-  </div>
+      <div *ngIf="prod.description">
+        Detail: {{ prod.description }}
+      </div>
 
-  <button (click)="share()">
-  Share
-  </button>
+      <button (click)="share(prod)">
+        Share
+      </button>
 
-  <app-product-alerts [product]="prod" (notify)="onNotifyClick($event)"></app-product-alerts>
+      <app-product-alerts [product]="prod" [title]="prod.name" (notify)="onNotifyClick($event)"></app-product-alerts>
 
 
-  <br>
+      <br>
 
-  <div>
- 
-    <a [title]="prod.name + ' details'" [routerLink]="['/products/details', prod.id, prod.name]">
-      View Details of {{ prod.name }}
-    </a>
-
-  </div>
+      <div>
     
-  <hr style="border: solid 4px grey;">
-  <br><br>
+        <a [title]="prod.name + ' details'" [routerLink]="['/products/details', prod.id, prod.name]">
+          View Details of {{ prod.name }}
+        </a>
+
+      </div>
+
+      <span>Price : {{ prod.price | rupees:'test' }} </span>
+        
+      <hr style="border: solid 4px grey;">
+      <br><br>
 
 </div>
+
+<br>
+
+<button (click)="addNameToList()">Add a name to list</button>
 
 <br>

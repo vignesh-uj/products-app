@@ -1,0 +1,10 @@
+.active {
+    background: rgb(105, 90, 3);
+    color: white;
+}
+
+.special {
+    background-color: rgb(1, 1, 46);
+    color: white;
+    box-shadow: 12em;
+}

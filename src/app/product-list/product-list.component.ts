@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 
 import { products } from '../products';
+import { CartService } from '../services/cart.service';
+import { CommonService } from '../services/common.service';
+import { MissionService } from '../services/mission.service';
 
 @Component({
   selector: 'app-product-list',
@@ -11,13 +14,33 @@ export class ProductListComponent {
   products = products;
   title  = 'Hello World';
 
+  constructor(private cartService: CartService, private commonService: CommonService) {
+
+  }
+
   
-  share() {
-    window.alert('The product has been shared!');
+  share(selectedProduct: any) {
+    debugger;
+    window.alert(`The product ${selectedProduct.name} has been shared!`);
   }
 
   onNotifyClick (evt: string) {
     alert(evt);
+  }
+
+  addNameToList () {
+
+    this.cartService.addToCart({
+      id: 10003,
+      name: 'ABCD',
+      description: 'ABCD',
+      price: 2000
+    });
+
+
+    this.commonService.addToNames('Mohan');
+
+
   }
 }
 

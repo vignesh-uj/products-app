@@ -11,7 +11,8 @@ import { CartService } from '../services/cart.service';
 export class ProductDetailsComponent implements OnInit {
 
   currentProduct?: Product;
-
+  offerClass: Record<string, boolean> = {};
+  classCount = 0;
   constructor(private route: ActivatedRoute, private cartService: CartService) { 
 
   }
@@ -23,6 +24,11 @@ export class ProductDetailsComponent implements OnInit {
     const productIdFromRoute = Number(routeParams.get('pid'));
     
     this.currentProduct = products.find(prod => prod.id === productIdFromRoute);
+
+
+    // setTimeout(() => {
+    //   this.offerClass = 'active';
+    // }, 4000);
     
   }
   
@@ -31,6 +37,15 @@ export class ProductDetailsComponent implements OnInit {
       this.cartService.addToCart(this.currentProduct);
       window.alert('Your product has been added to the cart!');
     }
+  }
+
+  addClass () {
+    const className = 'class-dynamic' + this.classCount;
+    this.offerClass = { ...this.offerClass, [className]: true };
+    setTimeout(() => {
+      this.offerClass = { ...this.offerClass, [className]: false };
+    }, 4000);
+    this.classCount++;
   }
 
 }

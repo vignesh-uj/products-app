@@ -1,0 +1,17 @@
+<br>
+<app-bread-crumb></app-bread-crumb>
+<div style="border: solid 1px blue; padding: 10px;">
+    <h2>Source code version</h2>
+    <button (click)="newMinor()">New minor version</button>
+    <button (click)="newMajor()">New major version</button>
+    <app-child-comp [major]="major" [minor]="minor" #childComponent ></app-child-comp>
+    <br>
+
+    <button (click)="increaseCounter()">Increment counter</button>
+
+    <br><br>
+
+    
+
+</div>
+

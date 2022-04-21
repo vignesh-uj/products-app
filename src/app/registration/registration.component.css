@@ -1,0 +1,7 @@
+.danger label {
+    color: red;
+}
+
+label.danger {
+    color: red;
+}

@@ -1,0 +1,77 @@
+<br>
+<app-bread-crumb></app-bread-crumb>
+
+<app-sizer [ngClass]="{foo: true}" #sizer></app-sizer>
+
+
+<br><br>
+
+<button (click)="onTemplateRefViewClick()" >View Ref</button>
+
+<br><br>
+
+<button (click)="onToggleStyle()">Toggle Style</button><br><br>
+<span [ngStyle]="spanStyle">This element is being applied with some dynamic styles!</span>
+
+<br><br>
+
+<button (click)="setRandomColor()">Set random color for highlight</button>
+
+<label appHighlight [color]="highlightColor">Enter your username:</label>
+<input type="text" [(ngModel)]="userName" id="example-ngModel">
+<label>{{ userName }} is already taken!</label>
+
+<p appZoomer size="48px" style="height: 100px;">
+  I turned the corner
+  <ng-container *ngIf="true">
+    and saw Vignesh. I waved
+  </ng-container>
+  and continued on my way.
+</p>
+
+
+
+<!-- <div [style.font-size.px]="fontSizePx">Resizable Text</div>
+THE CURRENT VALUE OF fontSizePx is {{ fontSizePx }}
+<br> <br> -->
+
+<div style="border: solid 1px red; padding: 10px;">
+    <h2>Mission Control</h2>
+    <button (click)="announce()">Announce mission</button>
+
+    <app-astronaut
+      *ngFor="let astronaut of astronauts"
+      [astronaut]="astronaut">
+    </app-astronaut>
+
+    <h3>History</h3>
+    {{ getSomeData() }}
+    <ul>
+      <li  *ngFor="let event of history">{{event }}</li>
+    </ul>
+
+    <span appZoomer>{{ currentDate | date  }}</span>
+
+</div>
+
+<br><br>
+<div>
+
+  Switch DEMO
+
+  <div appHighlight [color]="highlightColor" defaultColor="black" [ngSwitch]="project.feature">
+    <span *ngSwitchCase="'CRM'">{{ project.person }} works on - CRM</span>
+    <span *ngSwitchCase="'WAREHOUSE'">{{ project.person }} works on - WAREHOUSE</span>
+    <span *ngSwitchCase="'SALES'">{{ project.person }} works on - SALES</span>
+    <span *ngSwitchCase="'INVENTORY'">{{ project.person }} works on - INVENTORY</span>
+    <span *ngSwitchDefault>{{ project.person }} - Yet to be decided</span>
+  </div>
+
+</div>
+
+<button (click)="toggleProject()">Add name to list</button>
+
+<br><br>
+
+
+<br><br>

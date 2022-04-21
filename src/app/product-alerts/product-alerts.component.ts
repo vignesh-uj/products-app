@@ -12,6 +12,16 @@ export class ProductAlertsComponent implements OnInit {
   @Input()
   product?: Product;
 
+  // if the name ends with Standard then display it by appending text called ' ---- BEST SELLING PRODUCT'
+
+  @Input()
+  get title(): string { return this._title; }
+  set title(name: string) {
+    this._title = name.endsWith('Standard') ? name + ' ---- BEST SELLING PRODUCT' : name;
+  }
+
+  private _title = '';
+
   @Output()
   notify: EventEmitter<string> = new EventEmitter();
 

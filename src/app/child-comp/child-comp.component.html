@@ -1,0 +1,10 @@
+<br><br>
+<div style="border: solid 1px red; padding: 10px;">
+    <h3>Version {{major}}.{{minor}}</h3>
+    <h4>Change log:</h4>
+    <ul>
+        <li *ngFor="let change of changeLog">{{change}}</li>
+    </ul>
+
+    <span>Count: {{ counter }}</span>
+</div>

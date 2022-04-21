@@ -1,0 +1,9 @@
+<br>
+<p style="border: solid 1px blue; padding: 10px">
+    {{astronaut}}: <strong>{{mission}}</strong>
+    <button
+      (click)="confirm()"
+      [disabled]="!announced || confirmed">
+      Confirm
+    </button>
+  </p>

@@ -1,0 +1,134 @@
+
+
+<h3>Employee Registration - Reactive Forms Demo</h3>
+
+<div>
+
+    <form [formGroup]="profileForm">
+
+
+        <p>Form Status: {{ profileForm.status }}</p>
+
+        <label for="txtName">First name: </label>
+        <input type="text" id="txtName" formControlName="firstName" /> 
+        <div *ngIf="formControls.firstName.invalid" class="danger">
+            <label *ngIf="formControls.firstName.errors.required">First name is required, please enter the first name.</label>
+            <label *ngIf="formControls.firstName.errors.maxlength">First name cannot have more than 10 chars.</label>
+        </div>
+        <br>
+
+        <label for="txtLName">Last name: </label>
+        <input type="text" id="txtLName" formControlName="lastName" /> <br>
+
+        <label for="txtCity">City: </label>
+        <input type="text" id="txtCity"  formControlName="city" /> <br>
+
+        <label for="txtPhNo">Phone number: </label>
+        <input type="text" id="txtPhNo" formControlName="phone" /> 
+        <div *ngIf="formControls.phone.invalid" class="danger">
+            <label *ngIf="formControls.phone.errors.required">Phone number is required, please enter the Phone number.</label>
+            <label *ngIf="formControls.phone.errors.pattern">Phone is invalid.</label>
+        </div>
+        <label *ngIf="formControls.phone.invalid" class="danger"></label>
+        <br>
+
+        <label for="txtEmail">Email: </label>
+        <input type="text" id="txtEmail" formControlName="email" /> 
+        <div *ngIf="formControls.email.invalid" class="danger">
+            <label *ngIf="formControls.email.errors.required">Email is required, please enter the Email.</label>
+            <label *ngIf="formControls.email.errors.pattern">Email id is invalid, please follow the example pattern: username@domain.com.</label>
+        </div>
+        <br>
+
+        <label>Select gender</label>
+        <label for="gender_male">Male
+        <input type="radio" id="gender_male" value="M" formControlName="gender" /></label>
+
+        <label for="gender_female">Female
+        <input type="radio" id="gender_female" value="F" formControlName="gender" /></label>
+
+        <label for="overtime">
+        <input type="checkbox" id="overtime" formControlName="overtimeEnabled" /> Opt for Over time duty ?</label>
+
+        <label for="accomodation">
+        <input type="checkbox" id="accomodation" formControlName="accomodationEnabled" /> Opt for Accomodation</label>
+
+        <label for="nationality">Select nationality</label>
+        <select id="nationality" formControlName="nationality">
+            <option value="">-- Select --</option>
+            <option value="india">India</option>
+            <option value="america">America</option>
+            <option value="uk">UK</option>
+            <option value="china">China</option>
+            <option value="sweden">Sweden</option>
+            <option value="poland">Poland</option>
+            <option value="germany">Germany</option>
+        </select>
+        <br><br>
+
+        <label for="address">Enter your complete address.</label>
+        <textarea id="address" rows="6" formControlName="address">
+        </textarea>
+
+
+        <div formGroupName="proofOfDocuments" style="padding: 22px; border: solid 1px red;">
+            
+            <label for="txtAdhaar">Adhaar card: </label>
+            <input type="text" id="txtAdhaar" formControlName="adhaarNumber" /> <br>
+
+            <label for="txtPan">Pan card: </label>
+            <input type="text" id="txtPan" formControlName="panNumber" /> <br>
+
+            <label for="txtPassport">Passport: </label>
+            <input type="text" id="txtPassport" formControlName="passportNumber" /> <br>
+            
+        </div>
+
+
+        <div formArrayName="interests">
+            <div *ngFor="let interest of interests.controls; let i=index">
+                <label for="interest-{{ i }}">Interest:</label>
+                <input id="interest-{{ i }}" type="text" [formControlName]="i">
+            </div>
+            <button (click)="onAddInterest()">Add more interest</button>
+        </div>
+
+        <br /><br />
+        <div formArrayName="iplPoints">
+            <table>
+                <thead>
+                    <th>Team</th>
+                    <th>Point</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let iplPoint of iplPoints.controls; let i=index" [formGroupName]="i">
+                        <!-- <template [formGroupName]="i"> -->
+                            <td>
+                                <input id="iplTeam-{{ i }}" type="text" formControlName="teamName">
+                            </td>
+                            <td>
+                                <input id="iplScore-{{ i }}" type="text" formControlName="point">
+                            </td>
+                        <!-- </template> -->
+                    </tr>
+                </tbody>
+            </table>
+            <!-- <div *ngFor="let iplPoint of iplPoints.controls; let i=index">
+                <div [formGroupName]="i">
+                    <label for="iplTeam-{{ i }}">Team:</label>
+                    <input id="iplTeam-{{ i }}" type="text" formControlName="teamName">
+
+                    <label for="iplScore-{{ i }}">Score:</label>
+                    <input id="iplScore-{{ i }}" type="text" formControlName="point">
+                </div>
+            </div> -->
+            <button (click)="onAddTeam()">Add more Team</button><br />
+        </div>
+        <br /><br />
+        <button type="button" (click)="onSubmit()">Submit</button>
+
+        
+
+        </form>
+<br><br><br><br><br><br>
+</div>
