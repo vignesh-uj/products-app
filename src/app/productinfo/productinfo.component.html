@@ -1,0 +1,29 @@
+
+<br><br>
+
+<button style="float: right; margin-right: 120px;" class="btn btn-primary" (click)="onAddProduct()">Add product</button>
+<div style="width: 100%;">
+    <table class="table table-bordered table-striped table-hover">
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>Name</td>
+                <td>Description</td>
+                <td>Price</td>
+                <td>Actions</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let prod of products">
+                <td>{{ prod.id }}</td>
+                <td>{{ prod.name }}</td>
+                <td>{{ prod.description }}</td>
+                <td>{{ prod.price }}</td>
+                <td>
+                    <button class="btn btn-primary" style="margin-right: 4px" (click)="onEditProduct(prod)">Edit product</button>
+                    <button class="btn btn-primary" (click)="onDeleteProduct(prod)">Delete product</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

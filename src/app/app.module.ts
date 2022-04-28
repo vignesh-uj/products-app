@@ -25,6 +25,9 @@ import { MissionService } from './services/mission.service';
 import { TheRouterModule } from './the-router/the-router.module';
 import { BreadCrumbComponent } from './bread-crumb/bread-crumb.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { ProductinfoComponent } from './productinfo/productinfo.component';
+import { AddProductComponent } from './add-product/add-product.component';
+import { EditProductComponent } from './edit-product/edit-product.component';
 
 @NgModule({
   imports: [
@@ -52,7 +55,10 @@ import { RegistrationComponent } from './registration/registration.component';
     ZoomerDirective,
     UnlessDirective,
     BreadCrumbComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    ProductinfoComponent,
+    AddProductComponent,
+    EditProductComponent
   ],
   bootstrap: [
     AppComponent

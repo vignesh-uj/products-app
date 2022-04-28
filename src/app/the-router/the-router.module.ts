@@ -10,6 +10,9 @@ import { CompDemoComponent } from '../comp-demo/comp-demo.component';
 import { MissionControlComponent } from '../missioncontrol/missioncontrol.component';
 import { CustomerDashboardComponent } from '../customer-dashboard/customer-dashboard/customer-dashboard.component';
 import { RegistrationComponent } from '../registration/registration.component';
+import { ProductinfoComponent } from '../productinfo/productinfo.component';
+import { AddProductComponent } from '../add-product/add-product.component';
+import { EditProductComponent } from '../edit-product/edit-product.component';
 
 const routes: Routes = [
   { path: '', component: ProductListComponent },
@@ -20,6 +23,9 @@ const routes: Routes = [
   { path: 'mission-control', component: MissionControlComponent },
   { path: 'customer-dashboard', component: CustomerDashboardComponent },
   { path: 'register', component: RegistrationComponent },
+  { path: 'product-play', component: ProductinfoComponent },
+  { path: 'add-product', component: AddProductComponent },
+  { path: 'edit-product/:pid', component: EditProductComponent }
 ]; 
 
 @NgModule({

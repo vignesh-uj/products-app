@@ -1,0 +1,18 @@
+<div style="padding: 100px;">
+    <h3>Update a product</h3>
+    <div>
+        <form class="form-group" [formGroup]="productForm">
+            
+            <label for="txtName">Name: </label>
+            <input type="text" id="txtName" formControlName="name" /> 
+    
+            <label for="txtPrice">Price: </label>
+            <input type="text" id="txtPrice" formControlName="price" /> 
+    
+            <label for="txtDesc">Description: </label>
+            <input type="text" id="txtDesc" formControlName="description" /> 
+    
+            <button (click)="onSave()">Save</button>
+        </form>
+    </div>
+    </div>
