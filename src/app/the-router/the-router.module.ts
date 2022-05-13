@@ -13,6 +13,7 @@ import { RegistrationComponent } from '../registration/registration.component';
 import { ProductinfoComponent } from '../productinfo/productinfo.component';
 import { AddProductComponent } from '../add-product/add-product.component';
 import { EditProductComponent } from '../edit-product/edit-product.component';
+import { UsersObservablesComponent } from '../users-observables/users-observables.component';
 
 const routes: Routes = [
   { path: '', component: ProductListComponent },
@@ -25,7 +26,8 @@ const routes: Routes = [
   { path: 'register', component: RegistrationComponent },
   { path: 'product-play', component: ProductinfoComponent },
   { path: 'add-product', component: AddProductComponent },
-  { path: 'edit-product/:pid', component: EditProductComponent }
+  { path: 'edit-product/:pid', component: EditProductComponent },
+  { path: 'users-observables', component: UsersObservablesComponent }
 ]; 
 
 @NgModule({

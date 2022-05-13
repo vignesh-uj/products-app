@@ -1,0 +1,8 @@
+<h3>User list</h3>
+<div style="border: solid 1px blue;">
+    <div *ngFor="let user of userList">
+        <span>User name: {{ user.userName }}</span>
+        <span>Number of followers: {{ user.followers }}</span>
+        <span>Number of projects: {{ user.projects }}</span>
+    </div>
+</div>

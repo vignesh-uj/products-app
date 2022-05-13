@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -28,4 +29,30 @@ export class ProductService {
     return this.httpClient.delete('http://localhost:3000/products/' + productId);
   }
 
+  users = new BehaviorSubject<IUser[]>([]);
+  usersObservables = this.users.asObservable();  
+
+  public addUser (user: IUser) {
+    const userList = this.users.value;
+    userList.push(user);
+    this.users.next(userList);
+  }
+
+  public updateUser (user: IUser) {
+    const currentUserIndex = this.users.value.findIndex(x => x.userName === user.userName);
+    const userList = [...this.users.value];
+    userList[currentUserIndex] = user;
+    this.users.next(userList);
+  }
+
+  public getUsers () {
+    return this.usersObservables;
+  }
+}
+
+
+export interface IUser {
+  userName: string;
+  followers: number;
+  projects: number;
 }

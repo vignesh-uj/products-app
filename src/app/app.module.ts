@@ -28,6 +28,9 @@ import { RegistrationComponent } from './registration/registration.component';
 import { ProductinfoComponent } from './productinfo/productinfo.component';
 import { AddProductComponent } from './add-product/add-product.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
+import { UsersObservablesComponent } from './users-observables/users-observables.component';
+import { AddUserComponent } from './add-user/add-user.component';
+import { ListUserComponent } from './list-user/list-user.component';
 
 @NgModule({
   imports: [
@@ -58,7 +61,10 @@ import { EditProductComponent } from './edit-product/edit-product.component';
     RegistrationComponent,
     ProductinfoComponent,
     AddProductComponent,
-    EditProductComponent
+    EditProductComponent,
+    UsersObservablesComponent,
+    AddUserComponent,
+    ListUserComponent
   ],
   bootstrap: [
     AppComponent
