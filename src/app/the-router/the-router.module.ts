@@ -14,6 +14,7 @@ import { ProductinfoComponent } from '../productinfo/productinfo.component';
 import { AddProductComponent } from '../add-product/add-product.component';
 import { EditProductComponent } from '../edit-product/edit-product.component';
 import { UsersObservablesComponent } from '../users-observables/users-observables.component';
+import { IncomeExpensesComponent } from '../account-management/income-expenses/income-expenses.component';
 
 const routes: Routes = [
   { path: '', component: ProductListComponent },
@@ -27,7 +28,8 @@ const routes: Routes = [
   { path: 'product-play', component: ProductinfoComponent },
   { path: 'add-product', component: AddProductComponent },
   { path: 'edit-product/:pid', component: EditProductComponent },
-  { path: 'users-observables', component: UsersObservablesComponent }
+  { path: 'users-observables', component: UsersObservablesComponent },
+  { path: 'income-and-expenses', component: IncomeExpensesComponent }
 ]; 
 
 @NgModule({

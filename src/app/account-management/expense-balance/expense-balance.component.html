@@ -1,0 +1,31 @@
+<div class="expense-container">
+    <div class="row">
+        <div class="col-md-8">Expense</div>
+        <div class="col-md-4">
+            <div class="expense-box">
+                <p>Total expense</p>
+                <span>{{ totalExpense | rupees }}</span>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="max-height:200px; overflow-y: scroll;">
+        <div class="col-md-12">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Title</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let expense of expenseData">
+                        <td>{{ expense.dateTime }}</td>
+                        <td>{{ expense.title }}</td>
+                        <td>{{ expense.amount }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

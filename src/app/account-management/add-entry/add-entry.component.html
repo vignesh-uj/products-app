@@ -1,0 +1,46 @@
+<div class="add-new-entry-container">
+    <h3>Add new entry</h3>
+
+
+    
+    <form [formGroup]="entryForm">
+        <div class="row plvr">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="title">Title: </label>
+                    <input type="text" class="form-control" id="title" formControlName="title" /> 
+                </div>
+                
+                <div class="form-group">
+                    <label for="transactionType">Type: </label>
+                    <select id="transactionType" class="form-control" formControlName="transactionType">
+                        <option value="">-- Select --</option>
+                        <option value="1">Income</option>
+                        <option value="-1">Expense</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="txtNote">Note: </label>
+                    <input type="text" class="form-control" id="txtNote" formControlName="note" /> 
+                </div>
+
+                <button (click)="onSaveEntry()">Save</button>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="amount">Amount: </label>
+                <input type="number" class="form-control" id="amount" formControlName="amount" />
+            </div>
+            
+            <div class="form-group">
+                <label for="amount">Date: </label>
+                <input type="date" class="form-control" id="date" formControlName="dateTime" />
+            </div>
+        </div>
+    </div>
+    </form>
+    
+
+
+</div>

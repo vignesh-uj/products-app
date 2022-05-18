@@ -31,6 +31,7 @@ import { EditProductComponent } from './edit-product/edit-product.component';
 import { UsersObservablesComponent } from './users-observables/users-observables.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { ListUserComponent } from './list-user/list-user.component';
+import { AccountManagementModule } from './account-management/account-management.module';
 
 @NgModule({
   imports: [
@@ -38,7 +39,8 @@ import { ListUserComponent } from './list-user/list-user.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    TheRouterModule
+    TheRouterModule,
+    AccountManagementModule
   ],
   declarations: [
     AppComponent,
@@ -52,7 +54,6 @@ import { ListUserComponent } from './list-user/list-user.component';
     ChildCompComponent,
     MissionControlComponent,
     AstronautComponent,
-    RupeesPipe,
     SizerComponent,
     HighlightDirective,
     ZoomerDirective,
